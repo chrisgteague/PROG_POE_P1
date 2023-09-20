@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,16 +33,27 @@ namespace PROG_Draft_POE_P1
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void btnAddModule_Click(object sender, RoutedEventArgs e)
         {
-            modName = tbModuleName.Text;
+            
+            try
+            {
+                modName = tbModuleName.Text;
             modCode = tbModuleCode.Text;
             numCreds = Convert.ToDouble(tbNumberOfCredits.Text);
-            numClassHrs = Convert.ToDouble(tbClassHours);
+            numClassHrs = Convert.ToDouble(tbClassHours.Text);
+ListUtil.modules.Add(new Module(modName, modCode, numCreds, numClassHrs));
 
-            ListUtil.modules.Add(new Module { moduleName = modName, moduleCode = modCode, numberCredits = numCreds, numClassHours = numClassHrs });
+                MessageBox.Show("Module Added!!");
+
+            }catch 
+            {
+                MessageBox.Show("Failed to add module");
+            }
+            
 
         }
 
@@ -57,7 +69,24 @@ namespace PROG_Draft_POE_P1
     private void btnAddSelfStudyHours_Click(object sender, RoutedEventArgs e)
     { RecordStudyHours recordStudyHours = new RecordStudyHours();
       numSelfStudyHrs = Convert.ToDouble(tbNumberOfSelfStudyHours.Text);
+            selfStudyDate = Convert.ToDateTime(dpDateOfSelfStudy.Text);
+            moduleCode = cbModuleCode.Text;
 
+            ListUtil.recordStudyHours.Add(new RecordStudyHours {numStudyHours = numSelfStudyHrs, studyDate = selfStudyDate, modCode = moduleCode });
     }
-  }
+
+        private void btnUpdateDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            lvDisplay.ItemsSource = ListUtil.modules;
+
+
+
+
+
+
+
+        }
+
+      
+    }
 }

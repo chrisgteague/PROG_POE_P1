@@ -12,8 +12,8 @@ namespace PROG_Draft_POE_P1
         {
             Module module = new Module();
             Semester semester = new Semester();
-            module.numberCredits = creditNum;
-            module.numClassHours = classHourNum;
+            module.NumberCredits = creditNum;
+            module.NumClassHours = classHourNum;
             semester.numWeeks = weekNum;
            
             double selfStudyNum = ((creditNum * 10) / weekNum) - classHourNum;
