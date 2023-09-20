@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROG_Draft_POE_P1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="318" Width="491">
+        Title="MainWindow" Height="350" Width="558">
     <Grid>
         <TabControl>
             <TabItem Header="Add Module">
@@ -26,12 +26,12 @@
                     <TextBox x:Name="tbNumberOfWeeks" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
                     <Label Content="Number of Weeks" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
                     <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="139,151,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80"/>
+                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddSemester_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Add Self Study Hours">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="75,183,0,0" VerticalAlignment="Top" Height="29" Width="124"/>
+                    <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="75,183,0,0" VerticalAlignment="Top" Height="29" Width="124" Click="btnAddSelfStudyHours_Click"/>
                     <TextBox x:Name="tbNumberOfSelfStudyHours" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
                     <Label Content="Number of Hours" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
                     <DatePicker x:Name="dpDateOfSelfStudy" HorizontalAlignment="Left" Margin="139,151,0,0" VerticalAlignment="Top" Width="120"/>
@@ -40,9 +40,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Display">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dgDisplay" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,1,0"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5" Margin="0,0,-3,24" Height="308"/>
             </TabItem>
         </TabControl>
 

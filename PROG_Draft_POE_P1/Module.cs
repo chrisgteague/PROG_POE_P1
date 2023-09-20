@@ -8,18 +8,17 @@ namespace PROG_Draft_POE_P1
 {
     public class Module
     {
-        public string moduleName { get; set; }
-        public List<Semester> semesters = new List<Semester>();
-        public List<RecordStudy> recordStudy = new List<RecordStudy>();
-        public string moduleCode { get; set; }
-        public int numberCredits { get; set; }
-        public int numClassHours { get; set; }  
+        public String moduleName { get; set; }
+       
+        public String moduleCode { get; set; }
+        public double numberCredits { get; set; }
+        public double numClassHours { get; set; }  
 
 override
-            public string ToString()
+            public String ToString()
         {
             
-            return moduleName + moduleCode;
+            return moduleName + moduleCode + numberCredits + numClassHours;
         }
     }
 }

@@ -22,8 +22,10 @@ namespace PROG_Draft_POE_P1
     {
         public static string modName;
         public string modCode;
-        public int numCreds;
-        public int numClassHrs;
+        public double numCreds;
+        public double numClassHrs;
+    public double numOfWeeks;
+    public DateTime semDate;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,11 +35,25 @@ namespace PROG_Draft_POE_P1
         {
             modName = tbModuleName.Text;
             modCode = tbModuleCode.Text;
-            numCreds = Convert.ToInt32(tbNumberOfCredits.Text);
-            numClassHrs = Convert.ToInt32(tbClassHours);
+            numCreds = Convert.ToDouble(tbNumberOfCredits.Text);
+            numClassHrs = Convert.ToDouble(tbClassHours);
 
             ListUtil.modules.Add(new Module { moduleName = modName, moduleCode = modCode, numberCredits = numCreds, numClassHours = numClassHrs });
 
         }
+
+    private void btnAddSemester_Click(object sender, RoutedEventArgs e)
+    {
+      Semester semester = new Semester();
+      numOfWeeks = Convert.ToDouble(tbNumberOfWeeks.Text);
+      semDate = Convert.ToDateTime(dpSemesterStartDate.Text);
+
+      ListUtil.semesters.Add(new Semester { numWeeks = numOfWeeks, semesterStartDate = semDate });
     }
+
+    private void btnAddSelfStudyHours_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+  }
 }

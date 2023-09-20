@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace PROG_Draft_POE_P1
 {
-    public class RecordStudy
+    public class RecordStudyHours
     {
-        public int numStudyHours { get; set; }
+        public double numStudyHours { get; set; }
         public DateTime studyDate { get; set; }
+
+    public String modCode { get; set; }
     }
 }
