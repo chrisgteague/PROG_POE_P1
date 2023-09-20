@@ -26,6 +26,9 @@ namespace PROG_Draft_POE_P1
         public double numClassHrs;
     public double numOfWeeks;
     public DateTime semDate;
+    public double numSelfStudyHrs;
+    public DateTime selfStudyDate;
+    public String moduleCode;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,7 +55,8 @@ namespace PROG_Draft_POE_P1
     }
 
     private void btnAddSelfStudyHours_Click(object sender, RoutedEventArgs e)
-    {
+    { RecordStudyHours recordStudyHours = new RecordStudyHours();
+      numSelfStudyHrs = Convert.ToDouble(tbNumberOfSelfStudyHours.Text);
 
     }
   }
