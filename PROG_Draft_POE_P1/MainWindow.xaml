@@ -18,7 +18,7 @@
                     <Label Content="Number Of Credits" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.502"/>
                     <TextBox x:Name="tbClassHours" HorizontalAlignment="Left" Margin="120,136,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
                     <Label Content="Class Hours" HorizontalAlignment="Left" Margin="48,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.502"/>
-                    <Button x:Name="btnAddModule" Content="Add Module" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80"/>
+                    <Button x:Name="btnAddModule" Content="Add Module" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddModule_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Add Semester">
@@ -29,13 +29,20 @@
                     <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Record SelfStudy">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-3,-1">
-                    <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="108,211,0,0" VerticalAlignment="Top" Height="29" Width="124"/>
+            <TabItem Header="Add Self Study Hours">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="75,183,0,0" VerticalAlignment="Top" Height="29" Width="124"/>
+                    <TextBox x:Name="tbNumberOfSelfStudyHours" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
+                    <Label Content="Number of Hours" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
+                    <DatePicker x:Name="dpDateOfSelfStudy" HorizontalAlignment="Left" Margin="139,151,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="cbModuleList" HorizontalAlignment="Left" Margin="139,102,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Module" HorizontalAlignment="Left" Margin="86,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.502"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Display">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dgDisplay" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,1,0"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

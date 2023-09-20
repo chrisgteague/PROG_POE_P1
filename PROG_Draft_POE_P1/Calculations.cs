@@ -16,6 +16,7 @@ namespace PROG_Draft_POE_P1
             int selfStudyNum = ((creditNum * 10) / weekNum) - classHourNum;
             
             
+            
             return selfStudyNum.ToString();
 
         }
