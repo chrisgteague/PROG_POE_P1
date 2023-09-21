@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROG_Draft_POE_P1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="429" Width="719">
+        Title="MainWindow" Height="434" Width="1080">
     <Grid>
         <TabControl>
             <TabItem Header="Add Module">
@@ -21,22 +21,22 @@
                     <Button x:Name="btnAddModule" Content="Add Module" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddModule_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Add Semester">
+            <TabItem Header="Semester Start">
                 <Grid Background="#FFE5E5E5">
                     <TextBox x:Name="tbNumberOfWeeks" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
                     <Label Content="Number of Weeks" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
-                    <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="139,171,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="139,209,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddSemester_Click"/>
+                    <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="281,186,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="139,221,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddSemester_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Add Self Study Hours">
+            <TabItem Header="Record Self Study Hours">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="137,214,0,0" VerticalAlignment="Top" Height="29" Width="124" Click="btnAddSelfStudyHours_Click"/>
                     <TextBox x:Name="tbNumberOfSelfStudyHours" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
                     <Label Content="Number of Hours" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
-                    <DatePicker x:Name="dpDateOfSelfStudy" HorizontalAlignment="Left" Margin="139,171,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="cbModuleCode" HorizontalAlignment="Left" Margin="139,102,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Module" HorizontalAlignment="Left" Margin="86,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.502"/>
+                    <DatePicker x:Name="dpDateOfSelfStudy" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Center" Width="120"/>
+                    <ComboBox x:Name="cbModuleCode" HorizontalAlignment="Left" Margin="141,145,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Module" HorizontalAlignment="Left" Margin="88,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.502"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Display">
@@ -46,18 +46,20 @@
                             <GridView>
 
                                 <GridViewColumn Header="Module Name" Width="Auto" DisplayMemberBinding="{Binding ModuleName}"/>
-
-
-
                                 <GridViewColumn Header="Module Code" Width="Auto" DisplayMemberBinding="{Binding ModuleCode}"/>
-
-
                                 <GridViewColumn Header="Number of Credits" Width="105" DisplayMemberBinding="{Binding NumberCredits}"/>
-
-
-
                                 <GridViewColumn Header="Class Hours" Width="Auto" DisplayMemberBinding="{Binding NumClassHours}"/>
-                              
+                                <GridViewColumn Header="Remaining Self Study Hours" Width="Auto" DisplayMemberBinding="{Binding selfStudyNum}"/>
+                               
+                                
+
+
+
+
+
+
+
+
 
 
                             </GridView>

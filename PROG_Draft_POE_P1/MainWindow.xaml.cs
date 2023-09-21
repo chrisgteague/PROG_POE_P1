@@ -1,61 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROG_Draft_POE_P1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public static string modName;
-        public string modCode;
-        public double numCreds;
-        public double numClassHrs;
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
+  {
+    public static string modName;
+    public string modCode;
+    public double numCreds;
+    public double numClassHrs;
     public double numOfWeeks;
     public DateTime semDate;
     public double numSelfStudyHrs;
     public DateTime selfStudyDate;
     public String moduleCode;
-        public MainWindow()
+    public MainWindow()
+    {
+      InitializeComponent();
+      
+    }
+
+    private void btnAddModule_Click(object sender, RoutedEventArgs e)
+    {
+
+      try
+      {
+        modName = tbModuleName.Text;
+        modCode = tbModuleCode.Text;
+        numCreds = Convert.ToDouble(tbNumberOfCredits.Text);
+        numClassHrs = Convert.ToDouble(tbClassHours.Text);
+        ListUtil.modules.Add(new Module(modName, modCode, numCreds, numClassHrs));
+        cbModuleCode.Items.Clear(); 
+        List<Module> modList = ListUtil.modules;
+        foreach (Module item in modList)
         {
-            InitializeComponent();
-            
+          cbModuleCode.Items.Add(item.ModuleCode);
         }
+        MessageBox.Show("Module Added!!");
 
-        private void btnAddModule_Click(object sender, RoutedEventArgs e)
-        {
-            
-            try
-            {
-                modName = tbModuleName.Text;
-            modCode = tbModuleCode.Text;
-            numCreds = Convert.ToDouble(tbNumberOfCredits.Text);
-            numClassHrs = Convert.ToDouble(tbClassHours.Text);
-ListUtil.modules.Add(new Module(modName, modCode, numCreds, numClassHrs));
+      }
+      catch
+      {
+        MessageBox.Show("Failed to add module");
+      }
 
-                MessageBox.Show("Module Added!!");
 
-            }catch 
-            {
-                MessageBox.Show("Failed to add module");
-            }
-            
-
-        }
+    }
 
     private void btnAddSemester_Click(object sender, RoutedEventArgs e)
     {
@@ -67,26 +62,25 @@ ListUtil.modules.Add(new Module(modName, modCode, numCreds, numClassHrs));
     }
 
     private void btnAddSelfStudyHours_Click(object sender, RoutedEventArgs e)
-    { RecordStudyHours recordStudyHours = new RecordStudyHours();
+    {
+      RecordStudyHours recordStudyHours = new RecordStudyHours();
       numSelfStudyHrs = Convert.ToDouble(tbNumberOfSelfStudyHours.Text);
-            selfStudyDate = Convert.ToDateTime(dpDateOfSelfStudy.Text);
-            moduleCode = cbModuleCode.Text;
+      selfStudyDate = Convert.ToDateTime(dpDateOfSelfStudy.Text);
+      moduleCode = cbModuleCode.Text;
 
-            ListUtil.recordStudyHours.Add(new RecordStudyHours {numStudyHours = numSelfStudyHrs, studyDate = selfStudyDate, modCode = moduleCode });
+      ListUtil.recordStudyHours.Add(new RecordStudyHours { numStudyHours = numSelfStudyHrs, studyDate = selfStudyDate, modCode = moduleCode });
     }
 
-        private void btnUpdateDisplay_Click(object sender, RoutedEventArgs e)
-        {
-            lvDisplay.ItemsSource = ListUtil.modules;
+    private void btnUpdateDisplay_Click(object sender, RoutedEventArgs e)
+    { lvDisplay.Items.Clear();
+      lvDisplay.ItemsSource = ListUtil.modules;
 
 
 
 
 
-
-
-        }
-
-      
     }
+
+
+  }
 }
