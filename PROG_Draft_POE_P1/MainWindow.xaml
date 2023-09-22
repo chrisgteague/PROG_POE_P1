@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROG_Draft_POE_P1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="434" Width="1080">
+        Title="MainWindow" Height="434" Width="527">
     <Grid>
         <TabControl>
+            <TabItem Header="Semester Start">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbNumberOfWeeks" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
+                    <Label Content="Number of Weeks" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
+                    <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="281,186,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="139,221,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddSemester_Click"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Add Module">
                 <Grid Background="#FFE5E5E5">
                     <TextBox x:Name="tbModuleName" HorizontalAlignment="Left" Margin="120,43,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
@@ -21,14 +29,7 @@
                     <Button x:Name="btnAddModule" Content="Add Module" HorizontalAlignment="Left" Margin="140,198,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddModule_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Semester Start">
-                <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="tbNumberOfWeeks" HorizontalAlignment="Left" Margin="139,0,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Center" Width="120"/>
-                    <Label Content="Number of Weeks" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.502"/>
-                    <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="281,186,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btnAddSemester" Content="Add Semester" HorizontalAlignment="Left" Margin="139,221,0,0" VerticalAlignment="Top" Height="29" Width="80" Click="btnAddSemester_Click"/>
-                </Grid>
-            </TabItem>
+            
             <TabItem Header="Record Self Study Hours">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="btnAddSelfStudyHours" Content="Add Self Study Hours" HorizontalAlignment="Left" Margin="137,214,0,0" VerticalAlignment="Top" Height="29" Width="124" Click="btnAddSelfStudyHours_Click"/>
@@ -40,32 +41,18 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Display">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-3,0" Height="382">
-                    <ListView x:Name="lvDisplay" d:ItemsSource="{Binding}" Margin="10,0,10,76">
-                        <ListView.View>
-                            <GridView>
-
-                                <GridViewColumn Header="Module Name" Width="Auto" DisplayMemberBinding="{Binding ModuleName}"/>
-                                <GridViewColumn Header="Module Code" Width="Auto" DisplayMemberBinding="{Binding ModuleCode}"/>
-                                <GridViewColumn Header="Number of Credits" Width="105" DisplayMemberBinding="{Binding NumberCredits}"/>
-                                <GridViewColumn Header="Class Hours" Width="Auto" DisplayMemberBinding="{Binding NumClassHours}"/>
-                                <GridViewColumn Header="Remaining Self Study Hours" Width="Auto" DisplayMemberBinding="{Binding selfStudyNum}"/>
-                               
-                                
-
-
-
-
-
-
-
-
-
-
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                <Grid Background="#FFE5E5E5" Margin="0,0,-2,0" Height="393">
                     <Button x:Name="btnUpdateDisplay" Content="Update Display" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" Height="35" Width="135" Click="btnUpdateDisplay_Click"/>
+                    <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" Margin="16,0,17,93">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Module Name" Binding="{Binding moduleName}" />
+                            <DataGridTextColumn Header="Module Code" Binding="{Binding moduleCode}" />
+                            <DataGridTextColumn Header="Number Of Credits" Binding="{Binding numberCredits}" />
+                            <DataGridTextColumn Header="Number Of Class Hours" Binding="{Binding numClassHours}" />
+                            <DataGridTextColumn Header="Study Hours" Binding="{Binding remainingStudyHours}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                 </Grid>
             </TabItem>
         </TabControl>

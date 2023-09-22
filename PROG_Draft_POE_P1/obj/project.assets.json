@@ -8,19 +8,24 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chris\\.nuget\\packages\\": {}
+    "C:\\Users\\user-pc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\PROG_POE_P1\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1.csproj",
+      "projectUniqueName": "C:\\Users\\user-pc\\source\\repos\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1.csproj",
       "projectName": "PROG_Draft_POE_P1",
-      "projectPath": "C:\\Users\\chris\\Source\\Repos\\PROG_POE_P1\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1.csproj",
-      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Source\\Repos\\PROG_POE_P1\\PROG_Draft_POE_P1\\obj\\",
+      "projectPath": "C:\\Users\\user-pc\\source\\repos\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1.csproj",
+      "packagesPath": "C:\\Users\\user-pc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user-pc\\source\\repos\\PROG_Draft_POE_P1\\PROG_Draft_POE_P1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

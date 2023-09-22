@@ -7,26 +7,30 @@ using System.Threading.Tasks;
 namespace PROG_Draft_POE_P1
 {
     public class Module
-    {public Module() { }    
-        public Module(string moduleName, string moduleCode, double numberCredits, double numClassHours)
+    {public Module() { }
+        public Module(string ModuleName, string ModuleCode, double NumberCredits, double NumClassHours)
         {
-            ModuleName = moduleName;
-            ModuleCode = moduleCode;
-            NumberCredits = numberCredits;
-            NumClassHours = numClassHours;
+            moduleName = ModuleName;
+            moduleCode = ModuleCode;
+            numberCredits = NumberCredits;
+            numClassHours = NumClassHours;
+           
         }
 
-        public string ModuleName { get; set; }
+        public string moduleName { get; set; }
        
-        public string ModuleCode { get; set; }
-        public double NumberCredits { get; set; }
-        public double NumClassHours { get; set; }  
+        public string moduleCode { get; set; }
+        public double numberCredits { get; set; }
+        public double numClassHours { get; set; }
+        public double remainingStudyHours { get; set; }
 
-override
+
+
+        override
             public string ToString()
         {
             
-            return ModuleName + ModuleCode + NumberCredits + NumClassHours;
+            return moduleName + moduleCode + numberCredits + numClassHours + remainingStudyHours;
         }
     }
 }

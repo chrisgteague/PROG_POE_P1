@@ -8,22 +8,45 @@ namespace PROG_Draft_POE_P1
 {
     public class Calculations
     {
-        public double SelfStudyCalc(double creditNum, double weekNum, double classHourNum, double selfstudyhrNum)
+     
+        public double creditNum;
+        public double classHourNum;
+        public double weekNum;
+
+
+        public static double requiredStudyHrs(double creditNum, double classHourNum, double weekNum)
         {
-            Module module = new Module();
-            Semester semester = new Semester();
-            module.NumberCredits = creditNum;
-            module.NumClassHours = classHourNum;
-            semester.numWeeks = weekNum;
-           
+            
             double selfStudyNum = ((creditNum * 10) / weekNum) - classHourNum;
-      //where (record => (currentDate - record.date). totaldays < 7)
-      //sum(record => record.hours);
-    
 
 
-      return selfStudyNum;
+            return selfStudyNum;
         }
+
+
+
+
+
+            
+
+
+        public static double SelfStudyCalc(double selfstudyHrs, double remainingHrs)
+        {
+            double result = remainingHrs - selfstudyHrs;
+            if (result > 0)
+            {
+                return result;
+            }
+            else
+            { result = 0;
+                return result;
+            } 
+
+
+           
+        }
+
+      
 
     }
 }
